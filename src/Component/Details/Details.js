@@ -59,9 +59,9 @@ const Details = () => {
                                 <figure ><img className='w-full ' src={thumbnail} alt="Shoes" /></figure>
                             </div>
                             <div className=''>
-                                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 '>
+                                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 '>
                                     {
-                                        images && images.map(image => <figure><img className='w-48 h-48 p-3' src={image} alt="Shoes" /></figure>)
+                                        images && images.map(image => <figure><img className='w-36 h-44 p-3' src={image} alt="Shoes" /></figure>)
                                     }
                                 </div>
                             </div>
