@@ -15,7 +15,7 @@ const AllProduct = ({ card }) => {
                     <p className='font-semibold px-2'>Brand: {brand}</p>
                     <p className='font-semibold px-2'>Category: {category}</p>
                     <div className='px-2 '>
-                        <Link to='details' state={{ card: card }} className="link btn btn-primary w-full link-accent">Details</Link>
+                        <Link to='details' state={{ card: card }} className=" btn btn-primary w-full ">buy</Link>
                     </div>
                 </div>
             </div>

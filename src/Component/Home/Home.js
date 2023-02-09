@@ -23,15 +23,22 @@ const Home = () => {
         setCurrentPage(currentPage + 1)
         setFirstIndex(firstIndex + 9)
         setSecondIndex(secondIndex + 9)
-
-
-
+        if (secondIndex > 30) {
+            setFirstIndex(0)
+            setSecondIndex(9)
+        }
     }
     const handlePrev = () => {
         setCurrentPage(currentPage - 1)
         setFirstIndex(firstIndex - 9)
         setSecondIndex(secondIndex - 9)
+        if (secondIndex < 10) {
+            setFirstIndex(0)
+            setSecondIndex(9)
+        }
     }
+
+
     console.log(currentPage)
     console.log(firstIndex)
     console.log(secondIndex)
@@ -42,7 +49,6 @@ const Home = () => {
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8'>
                 {
                     cards?.products?.slice(firstIndex, secondIndex).map(card => <AllProduct
-
                         key={card.id}
                         card={card}
                     >

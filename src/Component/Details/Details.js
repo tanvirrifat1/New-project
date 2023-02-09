@@ -46,10 +46,6 @@ const Details = () => {
             })
     }
 
-
-
-
-
     return (
         <div className='container mx-auto p-10'>
             <div onClick={() => navigate(-1)}>
@@ -79,7 +75,7 @@ const Details = () => {
                                 className='btn btn-accent mt-3 w-full'
                                 value='Send'
                             >
-                                {loading ? <SmallSpinner /> : 'buy'}
+                                {loading ? <SmallSpinner /> : 'buy now'}
                             </LoadingButton>
                         </div>
                     </div>

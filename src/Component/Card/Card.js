@@ -23,9 +23,10 @@ const Card = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                // if (data.deletedCount > 0) {
-                //     toast.success('Delete Confirmed')
-                // }
+                if (data.deletedCount > 0) {
+                    toast.success('Delete Confirmed')
+                    refetch()
+                }
             })
             .catch(err => console.error(err))
     }
@@ -37,30 +38,55 @@ const Card = () => {
 
 
     return (
-        <div className='container mx-auto'>
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-8'>
-                {
-                    allData?.map(data => <div
-                        key={data.id}
-                        className="card  card-compact shadow-xl" data-aos="zoom-in" data-aos-duration="3000">
-                        <figure ><img className='h-[350px] w-full' src={data?.thumbnail} alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title px-2">{data?.title}</h2>
-                            <p className='font-semibold px-2'>Category: {data?.description}</p>
-                            <p className='font-semibold px-2'>Price: {data?.price}</p>
-                            <p className='font-semibold px-2'>Rating: {data?.rating}</p>
-                            <p className='font-semibold px-2'>Brand: {data?.brand}</p>
-                            <p className='font-semibold px-2'>Stock: {data?.stock}</p>
-                            <p className='font-semibold px-2'>DiscountPercentage: {data?.discountPercentage}</p>
-                            <p className='font-semibold px-2'>Category: {data?.category}</p>
-                        </div>
-                        <div>
-                            <button onClick={() => handleDelete()} className="btn btn-square w-full btn-outline">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                            </button>
-                        </div>
-                    </div>)
-                }
+        <div className='mx-auto container'>
+            <div>
+                <h1 className='text-start text-2xl font-serif'>Here our all order</h1>
+            </div>
+            <div className="overflow-x-auto">
+                <table className="table w-full">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Image</th>
+                            <th>title</th>
+                            <th>price</th>
+                            <th>rating</th>
+                            <th>brand</th>
+                            <th>stock</th>
+                            <th>discountPercentage</th>
+                            <th>category</th>
+                            <th>Delete</th>
+                            <th>description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            allData?.map((data, i) =>
+                                <tr key={data.id}>
+                                    <th>{i + 1}</th>
+                                    <th><div className="avatar">
+                                        <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                            <img src={data.thumbnail} />
+                                        </div>
+                                    </div></th>
+                                    <th className='font-semibold'>{data?.title}</th>
+                                    <td className='font-semibold'>{data?.price}</td>
+                                    <td className='font-semibold'>{data?.rating}</td>
+                                    <td className='font-semibold'>{data?.brand}</td>
+                                    <td className='font-semibold'>{data?.stock}</td>
+                                    <td className='font-semibold'>{data?.discountPercentage}</td>
+                                    <td className='font-semibold'>{data?.category}</td>
+                                    <td> <div>
+                                        <button onClick={() => handleDelete(data._id)} className="btn btn-square w-full btn-outline">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                                        </button>
+                                    </div>
+                                    </td>
+                                    <td className='font-semibold'>{data?.description}</td>
+                                </tr>)
+                        }
+                    </tbody>
+                </table>
             </div>
         </div>
     );
@@ -68,4 +94,3 @@ const Card = () => {
 
 export default Card;
 
-// const { title, description, price, discountPercentage, rating, stock, brand, category, thumbnail, images } 
