@@ -5,7 +5,7 @@ const Navbar = () => {
 
     const menuItmes = <>
         <li className='font-bold text-[18px] '><Link to='/'>Home</Link></li>
-        <li className='font-bold text-[18px]  '><Link to='/card'>Card</Link></li>
+        <li className='font-bold text-[18px]  '><Link to='/card'>All Order</Link></li>
     </>
 
     return (

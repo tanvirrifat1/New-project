@@ -1,6 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import AllProduct from '../AllProduct/AllProduct';
+import { BsFillArrowLeftSquareFill, BsFillArrowRightSquareFill } from "react-icons/bs";
+
 
 const Home = () => {
 
@@ -21,6 +23,9 @@ const Home = () => {
         setCurrentPage(currentPage + 1)
         setFirstIndex(firstIndex + 9)
         setSecondIndex(secondIndex + 9)
+
+
+
     }
     const handlePrev = () => {
         setCurrentPage(currentPage - 1)
@@ -28,6 +33,8 @@ const Home = () => {
         setSecondIndex(secondIndex - 9)
     }
     console.log(currentPage)
+    console.log(firstIndex)
+    console.log(secondIndex)
 
 
     return (
@@ -43,9 +50,9 @@ const Home = () => {
                 }
 
             </div>
-            <div>
-                <button onClick={handlePrev} className='btn'>Prev</button>
-                <button onClick={handleNext} className='btn'>Next</button>
+            <div className='flex justify-center p-4'>
+                <button onClick={handlePrev} className='btn hover:text-xl mr-2'><BsFillArrowLeftSquareFill /></button>
+                <button onClick={handleNext} className='btn hover:text-xl'><BsFillArrowRightSquareFill /></button>
             </div>
         </div>
     );

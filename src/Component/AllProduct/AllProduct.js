@@ -5,7 +5,8 @@ const AllProduct = ({ card }) => {
     const { title, description, price, discountPercentage, rating, stock, brand, category, thumbnail, images } = card
     return (
         <div >
-            <div className="card  card-compact shadow-xl">
+            <div className="card  card-compact shadow-xl" data-aos="fade-up"
+                data-aos-duration="3000">
                 <figure ><img className='h-[350px] w-full' src={thumbnail} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title px-2">{title}</h2>
