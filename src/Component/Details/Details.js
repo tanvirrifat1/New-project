@@ -53,30 +53,39 @@ const Details = () => {
             </div>
             <form onSubmit={handleSubmitData}>
                 <div className="card  card-compact shadow-xl">
-                    <div>
-                        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-                            {
-                                images && images.map(image => <figure><img className='h-[350px] p-3' src={image} alt="Shoes" /></figure>)
-                            }
+                    <div className='lg:flex justify-center items-center'>
+                        <div className=''>
+                            <div className='flex justify-start'>
+                                <figure ><img className='w-full ' src={thumbnail} alt="Shoes" /></figure>
+                            </div>
+                            <div className=''>
+                                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 '>
+                                    {
+                                        images && images.map(image => <figure><img className='w-48 h-48 p-3' src={image} alt="Shoes" /></figure>)
+                                    }
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="card-body">
-                        <h2 className="card-title px-2">{title}</h2>
-                        <p className='font-semibold px-2'>Description: {description}</p>
-                        <p className='font-semibold px-2'>Price: {price}</p>
-                        <p className='font-semibold px-2'>DiscountPercentage: {discountPercentage}</p>
-                        <p className='font-semibold px-2'>Rating: {rating}</p>
-                        <p className='font-semibold px-2'>Stock: {stock}</p>
-                        <p className='font-semibold px-2'>Brand: {brand}</p>
-                        <p className='font-semibold px-2'>Category: {category}</p>
-                        <div className='mt-4'>
-                            <LoadingButton
-                                type="submit"
-                                className='btn btn-accent mt-3 w-full'
-                                value='Send'
-                            >
-                                {loading ? <SmallSpinner /> : 'buy now'}
-                            </LoadingButton>
+                        <div className='mt-80 '>
+                            <div className="card-body">
+                                <h2 className="card-title text-3xl px-2">{title}</h2>
+                                <p className='text-xl font-semibold px-2'>Description: {description}</p>
+                                <p className='text-xl font-semibold px-2'>Price: {price}</p>
+                                <p className='text-xl font-semibold px-2'>DiscountPercentage: {discountPercentage}</p>
+                                <p className='text-xl font-semibold px-2'>Rating: {rating}</p>
+                                <p className='text-xl font-semibold px-2'>Stock: {stock}</p>
+                                <p className='text-xl font-semibold px-2'>Brand: {brand}</p>
+                                <p className='text-xl font-semibold px-2'>Category: {category}</p>
+                                <div className='mt-4'>
+                                    <LoadingButton
+                                        type="submit"
+                                        className='btn btn-accent mt-3 w-full'
+                                        value='Send'
+                                    >
+                                        {loading ? <SmallSpinner /> : 'buy now'}
+                                    </LoadingButton>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
