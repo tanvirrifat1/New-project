@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import img from '../../assets/e-commerce.jpg'
 
 const Navbar = () => {
 
@@ -9,7 +10,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div>
+        <div className='container mx-auto'>
             <div className="navbar bg-base-100 flex justify-between">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -20,7 +21,7 @@ const Navbar = () => {
                             {menuItmes}
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost normal-case text-xl font-bold hover:text-red-700 hover:text-3xl">E-Shop</Link>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl font-bold"><img className='h-20 w-20' src={img} alt="" /></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">

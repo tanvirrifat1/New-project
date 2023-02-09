@@ -29,7 +29,7 @@ const Details = () => {
         console.log(booking)
 
 
-        fetch(`http://localhost:5000/bookings`, {
+        fetch(`https://new-task-server-zeta.vercel.app/bookings`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -56,7 +56,7 @@ const Details = () => {
                     <div>
                         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                             {
-                                images && images.map(image => <figure><img className='h-[350px] ' src={image} alt="Shoes" /></figure>)
+                                images && images.map(image => <figure><img className='h-[350px] p-3' src={image} alt="Shoes" /></figure>)
                             }
                         </div>
                     </div>
